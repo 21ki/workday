@@ -13,15 +13,14 @@ def get_cst_time():
     cst_timezone = pytz.timezone('Asia/Shanghai')  # CST 时区为中国标准时间
     cst_time = local_time.astimezone(cst_timezone)  # 将本地时间转换为 CST 时间
     return cst_time
-
-@app.route('/')
-def home():
-    return 'Hello, World!'
-
-@app.route('/about')
-def about():
-    return 'About'
-
+def get_cst_time():
+    """
+    获取并转换服务器当前时间为中国标准时间（CST）。
+    """
+    local_time = datetime.now()  # 获取系统本地时间
+    cst_timezone = pytz.timezone('Asia/Shanghai')  # CST 时区为中国标准时间
+    cst_time = local_time.astimezone(cst_timezone)  # 将本地时间转换为 CST 时间
+    return cst_time
 
 @app.route('/api/is_workday', methods=['GET', 'POST'])
 def is_workday():
@@ -48,3 +47,12 @@ def is_workday():
         "date": date.isoformat(),
         "is_workday": is_workday
     })
+    
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
+@app.route('/about')
+def about():
+    return 'About'
+
