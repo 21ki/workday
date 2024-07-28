@@ -7,6 +7,7 @@ This example shows how to use Flask 3 on Vercel with Serverless Functions using 
 ## Demo
 
 workday
+中国工作日接口 之前用别人的接口说，然后突然就不能用了。引用[hinese_calendar](https://github.com/LKI/chinese-calendar)写一个简单的api，主要是处理工作日上班时间集团网络限速，其它时间自动不限速，对外出链接回公司提高带宽利用率
 
 ## How it Works
 
